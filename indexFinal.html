@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Medilab Free Bootstrap HTML5 Template</title>
+  <meta name="description" content="Bootstrap">
+  <meta name="keywords" content="free website templates, free bootstrap themes, free template, free bootstrap, free website template">
+
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans|Raleway|Candal">
+  <link rel="stylesheet" type="text/css" href="../static/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="../static/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="../static/css/style.css">
+  <!-- =======================================================
+    Theme Name: Medilab
+    Theme URL: https://bootstrapmade.com/medilab-free-medical-bootstrap-theme/
+    Author: BootstrapMade.com
+    Author URL: https://bootstrapmade.com
+  ======================================================= -->
+</head>
+
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
+
+  
+  <!--banner-->
+  <section id="contact" class="section-padding">
+
+    <div class="container">
+      <div class="row">
+       
+        <div class="col-md-8 col-sm-8 marb20">
+          <div class="contact-info">
+            <h3 class="cnt-ttl">~ Predict Water Demand ~</h3>
+            <div class="space"></div>
+            <div id="errormessage"></div>
+
+
+
+
+
+
+             <form action="/predict" method="post" role="form" class="contactForm">
+              
+              <div class="form-group">
+                <input type="number" class="form-control br-radius-zero" name="Ward" id="Ward" placeholder="Ward"  step = "1" data-msg="Please enter a valid number"  />
+                <div class="validation"></div>
+              </div>
+
+
+             <div class="form-group">
+              <h3>Select Month</h3>  <br>
+                <select name="Month">
+                <option value="Jan">January</option>
+                <option value="Feb">February</option>
+                <option value="Mar">March</option>
+                <option value="Apr">April</option>
+                <option value="May">May</option>
+                <option value="Jun">June</option>
+                <option value="Jul">July</option>
+                <option value="Aug">August</option>
+                <option value="Sep">September</option>
+                <option value="Oct">October</option>
+                <option value="Nov">November</option>
+                <option value="Dec">December</option>
+              </select>
+            </div>
+              
+
+              <div class="form-action">
+                <br><br><br><br> <button type="submit" class="btn btn-form">    Predict      </button>
+              </div>
+
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!--/ footer-->
+  <p>Prediction: {{ label }}</p>
+
+  <script src="js/jquery.min.js"></script>
+  <script src="js/jquery.easing.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/custom.js"></script>
+  <script src="contactform/contactform.js"></script>
+
+</body>
+
+</html>

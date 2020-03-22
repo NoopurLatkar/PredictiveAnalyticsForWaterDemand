@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Main CSS-->
+    <link rel="stylesheet" type="text/css" href="../static/css/main.css">
+    <!-- Font-icon css-->
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Login - Admin</title>
+  </head>
+  <body>
+
+ <script language = "javascript" type = "text/javascript">
+            //Browser Support Code
+                    function ajaxFunction()
+            {
+               var ajaxRequest;  // The variable that makes Ajax possible!
+               
+               try {
+                  // Opera 8.0+, Firefox, Safari
+                  ajaxRequest = new XMLHttpRequest();
+               }catch (e) {
+                  // Internet Explorer Browsers
+                  try {
+                     ajaxRequest = new ActiveXObject("Msxml2.XMLHTTP");
+                  }catch (e) {
+                     try{
+                        ajaxRequest = new ActiveXObject("Microsoft.XMLHTTP");
+                     }catch (e){
+                        // Something went wrong
+                        alert("Your browser broke!");
+                        return false;
+                     }
+                  }
+               }
+               
+               // Create a function that will receive data 
+               // sent from the server and will update
+               // div section in the same page.
+          
+               ajaxRequest.onreadystatechange = function(){
+                  if(ajaxRequest.readyState == 4){
+                     var ajaxDisplay = document.getElementById('ajaxDiv');
+                     ajaxDisplay.innerHTML = ajaxRequest.responseText;
+                  }
+               }
+               
+               // Now get the value from user and pass it to
+               // server script.
+          
+               var username_html= document.getElementById('username').value;
+               var password_html= document.getElementById('password').value;
+               var queryString = "?username=" + username_html ;
+            
+               queryString +=  "&username=" + username_html + "&password=" + password_html;
+               ajaxRequest.open("GET", "ajax-example.php" + queryString, true);
+               ajaxRequest.send(null); 
+            }
+            </script>
+
+    
+  
+    <section class="material-half-bg">
+      <div class="cover"></div>
+    </section>
+    <section class="login-content">
+      <div class="logo">
+        <h1>A Q U A S A V E</h1>
+      </div>
+      <div class="login-box">
+
+<!--         <form class="login-form" name="myForm">
+          <h3 class="login-head"><i class="fa fa-lg fa-fw fa-user"></i>SIGN IN</h3>
+          <div class="form-group">
+            <label class="control-label">USERNAME</label>
+            <input class="form-control" name="username" id="username" type="text" placeholder="Email" autofocus>
+          </div>
+
+          <div class="form-group">
+            <label class="control-label">PASSWORD</label>
+            <input class="form-control" type="password" placeholder="Password" name="pass" id = "password">
+          </div>
+
+          <div class="form-group">
+            <div class="utility">
+              <div class="animated-checkbox">
+                <label>
+                  <input type="checkbox"><span class="label-text">Stay Signed in</span>
+                </label>
+              </div>
+              <p class="semibold-text mb-2"><a href="#" data-toggle="flip">Forgot Password ?</a></p>
+            </div>
+          </div>
+
+          <div class="form-group btn-container"> -->
+            <!-- <button class="btn btn-primary btn-block" onclick = "ajaxFunction()" name="submit"><i class="fa fa-sign-in fa-lg fa-fw"></i>SIGN IN</button>
+            <input type = "button" onclick = "ajaxFunction()" value = "Login" name="submit"/>
+          </div>
+        </form> -->
+     <!--  <div id = "ajaxDiv">Your result will display here</div> -->
+        <form class="login-form" name="myForm" method="POST" action="/logg">
+          <h3 class="login-head"><i class="fa fa-lg fa-fw fa-user"></i>SIGN IN</h3>
+          <div class="form-group">
+            <label class="control-label">USERNAME</label>
+            <input class="form-control" name="username" id="username" type="text" placeholder="Username" autofocus>
+          </div>
+
+          <div class="form-group">
+            <label class="control-label">PASSWORD</label>
+            <input class="form-control" type="password" placeholder="Password" name="password" id = "password">
+          </div>
+
+          <div class="form-group">
+          <input type = "submit" value = "Login" name="Result"/>
+        </div>
+
+          <div class="form-group">
+            <div class="utility">
+              <div class="animated-checkbox">
+                <label>
+                  <input type="checkbox"><span class="label-text">Stay Signed in</span>
+                </label>
+              </div>
+              <p class="semibold-text mb-2"><a href="#" data-toggle="flip">Forgot Password ?</a></p>
+            </div>
+          </div>
+        </form>
+       <!--  <div id = "ajaxDiv">Your result will display here</div> -->
+          
+
+        <form class="forget-form" action="index.html">
+          <h3 class="login-head"><i class="fa fa-lg fa-fw fa-lock"></i>Forgot Password ?</h3>
+          <div class="form-group">
+            <label class="control-label">EMAIL</label>
+            <input class="form-control" type="text" placeholder="Email">
+          </div>
+          <div class="form-group btn-container">
+            <button class="btn btn-primary btn-block"><i class="fa fa-unlock fa-lg fa-fw"></i>RESET</button>
+          </div>
+          <div class="form-group mt-3">
+            <p class="semibold-text mb-0"><a href="#" data-toggle="flip"><i class="fa fa-angle-left fa-fw"></i> Back to Login</a></p>
+          </div>
+        </form>
+
+       
+
+      </div>
+
+    </section>
+    <!-- Essential javascripts for application to work-->
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
+    <!-- The javascript plugin to display page loading on top-->
+    <script src="js/plugins/pace.min.js"></script>
+    
+   <!--  <script type="text/javascript">
+      // Login Page Flipbox control
+      $('.login-content [data-toggle="flip"]').click(function() {
+      	$('.login-box').toggleClass('flipped');
+      	return false;
+      });
+    </script> -->
+
+   
+  </body>
+</html>
